@@ -1,0 +1,82 @@
+<div class="container" style="text-align:center; margin: auto; max-width: 700px;">
+
+  <h1>Register below, comrade!</h1>
+  <img src="https://deadlysurprise.github.io/d2LoadingScreens/d2logo.png" alt="logo">
+
+  <form [formGroup]="register" (ngSubmit)="onSubmit(register)">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="username">Username</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               placeholder="Your Username"
+               required
+               formControlName="username"
+        >
+        <div *ngIf="register.get('username').errors && register.get('username').touched" class="alert alert-danger"
+        >Please fill in a valid username
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="email"
+               class="form-control"
+               id="email"
+               placeholder="Valid non-hacker email"
+               required
+               formControlName="email"
+        >
+        <div *ngIf="register.get('email').errors && register.get('email').touched" class="alert alert-danger"
+        >Please fill in a valid email
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="auth">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="inputPassword">Password</label>
+          <input type="password"
+                 class="form-control"
+                 id="inputPassword"
+                 placeholder="Password"
+                 required
+                 formControlName="inputPassword"
+          >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password"
+                 class="form-control"
+                 id="confirmPassword"
+                 placeholder="Confirm Password"
+                 required
+                 formControlName="confirmPassword"
+          >
+        </div>
+        <div class="alert alert-danger"
+          *ngIf="register.get('auth').get('confirmPassword').errors && register.get('auth').get('confirmPassword').touched" >Passwords don't match</div>
+      </div>
+    </div>
+
+    <small>The below information is purely optional</small>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label for="creditCard">Credit Card number for automatic micro-transactions (risk free!!!)</label>
+        <input type="text"
+               class="form-control"
+               id="creditCard"
+               placeholder="Full CC info please"
+               formControlName="creditCard"
+        >
+        <div *ngIf="!register.get('creditCard').pristine" class="alert alert-warning"
+        >We were just joking
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <a routerLink="/"><h4>Back</h4></a>
+
+</div>

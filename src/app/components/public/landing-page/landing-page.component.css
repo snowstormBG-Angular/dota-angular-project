@@ -1,0 +1,15 @@
+h1{
+  color: rgba(65,150,208,0.55);
+  /*text-shadow: 0px 6px 8px rgba(218, 216, 255, 0.2);*/
+  text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.3);
+}
+label{
+  color: rgba(65,150,208,0.85);
+}
+
+a{
+  text-decoration: none;
+}
+small{
+  color: darkturquoise;
+}

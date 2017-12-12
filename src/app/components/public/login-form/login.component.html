@@ -1,0 +1,40 @@
+<div class="container" style="text-align:center; margin: auto; max-width: 300px;">
+
+  <h1>Log yourself right in!</h1>
+  <img src="https://deadlysurprise.github.io/d2LoadingScreens/d2logo.png" alt="logo">
+
+  <form [formGroup]="login" (ngSubmit)="onSubmit(login)">
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label for="username">Username</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               placeholder="Your Username"
+               formControlName="username"
+               required
+        >
+        <div *ngIf="login.get('username').errors && login.get('username').touched" class="alert alert-danger"
+        >Please fill in your username</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label for="password">Password</label>
+        <input type="password"
+               class="form-control"
+               id="password"
+               placeholder="Password"
+               formControlName="password"
+               required
+        >
+        <div *ngIf="loginFail" class="alert alert-danger">Invalid credentials <br/>
+          Please make sure you have your username and pass correct</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <a routerLink="/"><h4>Back</h4></a>
+
+</div>
