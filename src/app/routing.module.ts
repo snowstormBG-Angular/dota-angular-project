@@ -7,11 +7,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {ValidatePassword} from './components/public/register-form/validate-password';
 
 //components
+//public
 import {LandingPageComponent} from './components/public/landing-page/landing-page.component';
 import {LoginComponent} from "./components/public/login-form/login.component";
 import {RegisterComponent} from "./components/public/register-form/register.component";
 import {NewsComponent} from './components/public/news/news.component';
-import {NewsArticleComponent} from './components/public/news/news-article/news-article.component';
+//private
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { HeroesComponent } from './components/private/heroes/heroes.component';
+import {AuthenticationModule} from "./services/auth.module";
 
 
 //todo: add guards
@@ -29,12 +33,20 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     NewsComponent,
-    NewsArticleComponent
+    DashboardComponent,
+    HeroesComponent
   ],
-  imports: [RouterModule.forRoot(routes), ReactiveFormsModule, CommonModule],
-  exports: [RouterModule, NewsComponent],
+  imports: [
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    CommonModule,
+    AuthenticationModule
+  ],
+  exports: [RouterModule,
+    NewsComponent
+  ],
   providers:[
-    ValidatePassword
+    ValidatePassword,
   ]
 })
 export class RoutingModule {

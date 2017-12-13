@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {ValidatePassword} from './validate-password';
+import {AuthenticationService} from '../../../services/auth.service';
+import {RegisterModel} from '../../../services/models/register.model'
 
 
 @Component({
@@ -9,9 +11,16 @@ import {ValidatePassword} from './validate-password';
 })
 export class RegisterComponent{
   public register: FormGroup;
+  public model: RegisterModel;
+  public registeredUser : string;
+  public registerSuccess : boolean;
+  public registerFail : boolean;
 
-  constructor(private fb: FormBuilder) {
-
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthenticationService
+  ) {
+    this.model = new RegisterModel("", "", "", "");
   }
 
   ngOnInit(): void {
@@ -30,5 +39,31 @@ export class RegisterComponent{
 
   onSubmit(data){
     console.log(data);
+  }
+
+  registerSubmit(formData) : void {
+    //console.log(formData);
+    this.model.username = formData.value.username;
+    this.model.password = formData.value.auth.inputPassword;
+    this.model.email = formData.value.email;
+    this.model.creditCard = formData.value.creditCard;
+    this.authService.register(this.model)
+      .subscribe(
+        data => {
+          this.successfulRegister(data);
+        },
+        err => {
+          this.registerFail = true;
+        }
+      )
+  }
+
+  get diagnostics() : string {
+    return JSON.stringify(this.model);
+  }
+
+  successfulRegister(data) : void {
+    this.registerSuccess = true;
+    this.registeredUser = data['username'];
   }
 }

@@ -3,7 +3,7 @@
   <h1>Register below, comrade!</h1>
   <img src="https://deadlysurprise.github.io/d2LoadingScreens/d2logo.png" alt="logo">
 
-  <form [formGroup]="register" (ngSubmit)="onSubmit(register)">
+  <form [formGroup]="register" (ngSubmit)="registerSubmit(register)">
     <div class="row">
       <div class="form-group col-md-6">
         <label for="username">Username</label>
@@ -58,6 +58,10 @@
         <div class="alert alert-danger"
           *ngIf="register.get('auth').get('confirmPassword').errors && register.get('auth').get('confirmPassword').touched" >Passwords don't match</div>
       </div>
+    </div>
+
+    <div *ngIf="registerFail" class="alert alert-danger">
+      User already exists!
     </div>
 
     <small>The below information is purely optional</small>

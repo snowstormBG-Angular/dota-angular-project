@@ -6,6 +6,7 @@ import { RoutingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/public/landing-page/landing-page.component';
+import {AuthenticationModule} from "./services/auth.module";
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { LandingPageComponent } from './components/public/landing-page/landing-p
     RoutingModule,
     // ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthenticationModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
