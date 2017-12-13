@@ -12,6 +12,7 @@ import {LandingPageComponent} from './components/public/landing-page/landing-pag
 import {LoginComponent} from "./components/public/login-form/login.component";
 import {RegisterComponent} from "./components/public/register-form/register.component";
 import {NewsComponent} from './components/public/news/news.component';
+import { ErrorPageComponent } from './components/public/error-page/error-page.component';
 //private
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { HeroesComponent } from './components/private/heroes/heroes.component';
@@ -22,10 +23,13 @@ import {AuthenticationModule} from "./services/auth.module";
 //default auth
 //guard login and register from logged users
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
+  {path: '', pathMatch:'full', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'news', component: NewsComponent}
+  {path: 'news', component: NewsComponent},
+
+
+  {path:'**', component: ErrorPageComponent}
 ];
 
 @NgModule({
@@ -34,7 +38,8 @@ const routes: Routes = [
     RegisterComponent,
     NewsComponent,
     DashboardComponent,
-    HeroesComponent
+    HeroesComponent,
+    ErrorPageComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
