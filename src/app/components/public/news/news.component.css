@@ -1,0 +1,37 @@
+.card{
+  background-color: black;
+  background-repeat: no-repeat;
+  display: block;
+  min-width: 20em;
+  max-width: 30em;
+  min-height: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  border-radius: 5px;
+}
+.card-body{
+  color: whitesmoke;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  padding:45px;
+  padding-top: 1em;
+}
+.wrapper{
+  margin: auto;
+  width: 90%;
+}
+.iterator{
+  display: inline-block;
+  margin: auto;
+  width: 45%;
+}
+.card-img-top{
+  width: 100%;
+}
+
+@media screen and (max-width: 960px){
+  .iterator{
+    display: block;
+    margin: auto;
+    width: 85%;
+  }
+}

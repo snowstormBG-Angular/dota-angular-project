@@ -11,8 +11,12 @@ import {LandingPageComponent} from './components/public/landing-page/landing-pag
 import {LoginComponent} from "./components/public/login-form/login.component";
 import {RegisterComponent} from "./components/public/register-form/register.component";
 import {NewsComponent} from './components/public/news/news.component';
+import {NewsArticleComponent} from './components/public/news/news-article/news-article.component';
 
 
+//todo: add guards
+//default auth
+//guard login and register from logged users
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'login', component: LoginComponent},
@@ -24,7 +28,8 @@ const routes: Routes = [
   declarations: [
     LoginComponent,
     RegisterComponent,
-    NewsComponent
+    NewsComponent,
+    NewsArticleComponent
   ],
   imports: [RouterModule.forRoot(routes), ReactiveFormsModule, CommonModule],
   exports: [RouterModule, NewsComponent],
