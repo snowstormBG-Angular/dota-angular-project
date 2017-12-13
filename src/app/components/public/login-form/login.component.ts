@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.successfulLogin(data);
-          console.log("success");
+          console.log("successful login");
         },
         err => {
           this.loginFail = true;

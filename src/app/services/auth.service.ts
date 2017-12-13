@@ -51,9 +51,14 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    let authtoken : string = localStorage.getItem('authtoken');
-
-    return authtoken === this.currentAuthtoken;
+    //TODO: this fix Kiril's verification
+    // let authtoken : string = localStorage.getItem('authtoken');
+    // console.log("auth.service - isLoggedIn()");
+    // console.log(authtoken === this.currentAuthtoken);
+    // console.log(authtoken);
+    //
+    // return authtoken === this.currentAuthtoken;
+    return (localStorage.getItem('authtoken') !== null)
   }
 
   get authtoken() {

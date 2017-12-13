@@ -6,6 +6,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 //services
 import {ValidatePassword} from './components/public/register-form/validate-password';
 
+//guards
+import {AuthGuard} from './guards/auth.guard.service';
+import {LandingGuard} from './guards/landing.guard.service'
+
 //components
 //public
 import {LandingPageComponent} from './components/public/landing-page/landing-page.component';
@@ -23,11 +27,11 @@ import {AuthenticationModule} from "./services/auth.module";
 //default auth
 //guard login and register from logged users
 const routes: Routes = [
-  {path: '', pathMatch:'full', component: LandingPageComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: '', pathMatch:'full', canActivate: [ LandingGuard ], component: LandingPageComponent},
+  {path: 'login', canActivate: [ LandingGuard ], component: LoginComponent},
+  {path: 'register', canActivate: [ LandingGuard ], component: RegisterComponent},
   {path: 'news', component: NewsComponent},
-
+  {path: 'dashboard',  canActivate: [ AuthGuard ], component: DashboardComponent},
 
   {path:'**', component: ErrorPageComponent}
 ];
@@ -52,6 +56,8 @@ const routes: Routes = [
   ],
   providers:[
     ValidatePassword,
+    AuthGuard,
+    LandingGuard
   ]
 })
 export class RoutingModule {
