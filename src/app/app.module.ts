@@ -11,6 +11,7 @@ import { FooterComponent } from './common/footer/footer.component';
 
 
 import {AuthenticationModule} from "./services/auth.module";
+import {LoggedStateService} from './services/logged-state.service'
 
 
 @NgModule({
@@ -25,7 +26,10 @@ import {AuthenticationModule} from "./services/auth.module";
     RoutingModule,
     // ReactiveFormsModule
   ],
-  providers: [AuthenticationModule],
+  providers: [
+    AuthenticationModule,
+    LoggedStateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

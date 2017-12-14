@@ -21,6 +21,7 @@ import { ErrorPageComponent } from './components/public/error-page/error-page.co
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { HeroesComponent } from './components/private/heroes/heroes.component';
 import {AuthenticationModule} from "./services/auth.module";
+import { BoxComponent } from './components/private/dashboard/box/box.component';
 
 
 //todo: add guards
@@ -44,6 +45,7 @@ const routes: Routes = [
     DashboardComponent,
     HeroesComponent,
     ErrorPageComponent,
+    BoxComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -52,7 +54,8 @@ const routes: Routes = [
     AuthenticationModule
   ],
   exports: [RouterModule,
-    NewsComponent
+    NewsComponent,
+    LoginComponent
   ],
   providers:[
     ValidatePassword,

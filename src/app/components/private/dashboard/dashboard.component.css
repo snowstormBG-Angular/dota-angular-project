@@ -1,0 +1,55 @@
+div{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.dashboard{
+  width: 80%;
+  background-color: #42A948;
+  margin: auto;
+  min-height: 500px;
+}
+.side-row{
+  display: inline-block;
+  width: 25%;
+  background-color: cadetblue;
+}
+.middle-row{
+  display: inline-block;
+  width: 50%;
+  background-color: darkslategrey;
+}
+
+/*boxes styling*/
+#profile{
+  min-height: 150px;
+  color: yellow;
+}
+#friends{
+  min-height: 150px;
+}
+#news-general{
+  min-height: 150px;
+}
+#new-items{
+  min-height: 150px;
+}
+#new-treasures{
+  min-height: 150px;
+}
+#watch-live{
+  min-height: 150px;
+}
+#party-box{
+  min-height: 150px;
+  background: #eeeeee;
+}
+#last-match{
+  min-height: 150px;
+}
+#offers{
+  min-height: 150px;
+}
+#feed{
+  min-height: 150px;
+}

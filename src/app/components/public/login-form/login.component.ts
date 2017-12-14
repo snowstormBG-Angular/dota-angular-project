@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {LoginModel} from '../../../services/models/login.model';
 import {AuthenticationService} from '../../../services/auth.service';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+import {LoggedStateService} from "../../../services/logged-state.service";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private authService: AuthenticationService,
-              private router: Router) {
+              private router: Router,
+              private loggedStateServ: LoggedStateService
+  ) {
     this.model = new LoginModel("", "");
   }
 
@@ -46,10 +49,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);
     localStorage.setItem('username', data['username']);
     this.loginFail = false;
+    this.loggedStateServ.emitChange(true);
     this.router.navigate(['/']);
-  }
-
-  loginFailNotify() : void {
-    this.loginFail = true;
   }
 }
