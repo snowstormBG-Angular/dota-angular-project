@@ -1,55 +1,82 @@
 div{
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 .dashboard{
   width: 80%;
-  background-color: #42A948;
   margin: auto;
   min-height: 500px;
-}
-.side-row{
-  display: inline-block;
-  width: 25%;
-  background-color: cadetblue;
-}
-.middle-row{
-  display: inline-block;
-  width: 50%;
-  background-color: darkslategrey;
+  color: #ACACAC;
+
+  /*CSS grid for the dashboard*/
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 150px 150px 200px;
 }
 
 /*boxes styling*/
+.dash-box{
+  background-color: rgba(20,20,20,0.5);
+  margin: 5px;
+  overflow: hidden;
+}
 #profile{
-  min-height: 150px;
-  color: yellow;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 #friends{
-  min-height: 150px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 #news-general{
-  min-height: 150px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 #new-items{
-  min-height: 150px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 #new-treasures{
-  min-height: 150px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 #watch-live{
-  min-height: 150px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 #party-box{
-  min-height: 150px;
-  background: #eeeeee;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 #last-match{
-  min-height: 150px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 #offers{
-  min-height: 150px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 #feed{
-  min-height: 150px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }

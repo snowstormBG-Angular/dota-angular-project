@@ -51,7 +51,7 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    //TODO: this fix Kiril's verification
+    //TODO: this check fails my navbar check; using localstorage verification for now
     // let authtoken : string = localStorage.getItem('authtoken');
     // console.log("auth.service - isLoggedIn()");
     // console.log(authtoken === this.currentAuthtoken);

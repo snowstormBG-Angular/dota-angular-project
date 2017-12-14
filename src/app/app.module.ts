@@ -11,7 +11,8 @@ import { FooterComponent } from './common/footer/footer.component';
 
 
 import {AuthenticationModule} from "./services/auth.module";
-import {LoggedStateService} from './services/logged-state.service'
+import {DatabaseService} from './services/db.service';
+import {LoggedStateService} from './services/logged-state.service';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {LoggedStateService} from './services/logged-state.service'
   ],
   providers: [
     AuthenticationModule,
-    LoggedStateService
+    LoggedStateService,
+    DatabaseService
   ],
   bootstrap: [AppComponent]
 })

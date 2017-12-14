@@ -1,9 +1,13 @@
 <div class="wrapper">
+  <div class="row" style="text-align:center;">
+    <div class="land-page-box col-md-12">
+      <a routerLink="/"><h2><< Back</h2></a>
+    </div>
+  </div>
+
   <div *ngFor="let article of articles"
        class="iterator">
-    <!--<div class="card" [ngStyle]="{'width' : '20rem', 'background': 'url({{article.imageUrl}}) no-repeat center center fixed'}">-->
     <div class="card">
-         <!--[ngStyle]="{'background-image' : 'url(' + article.imageUrl + ')'}">-->
       <img class="card-img-top" src="{{article.imageUrl}}" alt="img">
       <div class="card-body">
         <h3 class="card-title">{{article.title}}</h3>
