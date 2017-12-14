@@ -1,0 +1,45 @@
+li {
+  display: inline-block;
+  padding: 21px 18px;
+  border: 1px solid black;
+  margin: 0;
+  transform: skew(-20deg); /* SKEW */
+}
+
+li a {
+  display: block;
+  transform: skew(20deg); /* INVERSE SKEW */
+  font-family: OFL Sorts Mill Goudy, Noto Nastaliq Urdu, My Noto Nastaliq Urdu, Georgia, serif;
+  /*font-weight: bold;*/
+  color: #cccccc;
+
+}
+li a:hover{
+  color: #eeeeee;
+}
+
+.skewed {
+}
+
+li.clear {
+  display: inline-block;
+  padding: 10px;
+  margin: 0;
+  border: 0;
+  transform: skew(0deg); /* SKEW */
+}
+
+li.clear > a {
+
+  transform: skew(0deg); /* SKEW */
+}
+
+ul{
+  background: -moz-linear-gradient(0deg, rgba(5,6,8,1) 0%, rgba(145,73,25,1) 14%, rgba(47,41,45,1) 26%, rgba(5,6,8,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(5,6,8,1)), color-stop(14%, rgba(145,73,25,1)), color-stop(26%, rgba(47,41,45,1)), color-stop(100%, rgba(5,6,8,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(0deg, rgba(5,6,8,1) 0%, rgba(145,73,25,1) 14%, rgba(47,41,45,1) 26%, rgba(5,6,8,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(0deg, rgba(5,6,8,1) 0%, rgba(145,73,25,1) 14%, rgba(47,41,45,1) 26%, rgba(5,6,8,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(0deg, rgba(5,6,8,1) 0%, rgba(145,73,25,1) 14%, rgba(47,41,45,1) 26%, rgba(5,6,8,1) 100%); /* ie10+ */
+  background: linear-gradient(90deg, rgba(5,6,8,1) 0%, rgba(145,73,25,1) 14%, rgba(47,41,45,1) 26%, rgba(5,6,8,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050608', endColorstr='#050608',GradientType=1 ); /* ie6-9 */
+}

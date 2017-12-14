@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {ValidatePassword} from './validate-password';
 import {AuthenticationService} from '../../../services/auth.service';
-import {RegisterModel} from '../../../services/models/register.model'
+import {RegisterModel} from '../../../services/models/register.model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class RegisterComponent{
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private router: Router
   ) {
     this.model = new RegisterModel("", "", "", "");
   }
@@ -65,5 +67,6 @@ export class RegisterComponent{
   successfulRegister(data) : void {
     this.registerSuccess = true;
     this.registeredUser = data['username'];
+    this.router.navigate(['/login']);
   }
 }

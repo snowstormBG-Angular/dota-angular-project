@@ -10,7 +10,6 @@ export class LandingGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     let amLoggedIn = localStorage.getItem('authtoken');
-    console.log("in");
     // let amLoggedIn: boolean = this.authService.isLoggedIn();
     // console.log(`amloggedin -> ${amLoggedIn}`);
 

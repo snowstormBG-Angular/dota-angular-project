@@ -7,7 +7,7 @@ import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/public/landing-page/landing-page.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
-import { FooterComponent } from './common/footer/footer.component'
+import { FooterComponent } from './common/footer/footer.component';
 
 
 import {AuthenticationModule} from "./services/auth.module";
