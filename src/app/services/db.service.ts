@@ -6,6 +6,8 @@ const appKey = "kid_r1kO3_pbM"; // APP KEY HERE;
 const appSecret = "91ee55016f6f4237a4f8a0eab6ca3a30"; // APP SECRET HERE;
 const dashboardUrl = `https://baas.kinvey.com/appdata/${appKey}/dashboard`;
 const newsUrl = `https://baas.kinvey.com/appdata/${appKey}/news`;
+const itemsUrl = `https://baas.kinvey.com/appdata/${appKey}/items`;
+const heroesUrl = `https://baas.kinvey.com/appdata/${appKey}/heroes`;
 
 @Injectable()
 export class DatabaseService {
@@ -32,36 +34,24 @@ export class DatabaseService {
       }
     );
   }
-  //
-  // login(loginModel : LoginModel) {
-  //   return this.http.post(
-  //     loginUrl,
-  //     JSON.stringify(loginModel),
-  //     {
-  //       headers: this.createAuthHeaders('Basic')
-  //     }
-  //   )
-  // }
-  //
-  // register(registerModel : RegisterModel) : Observable<Object> {
-  //   return this.http.post(
-  //     registerUrl,
-  //     JSON.stringify(registerModel),
-  //     {
-  //       headers: this.createAuthHeaders('Basic')
-  //     }
-  //   )
-  // }
-  //
-  // logout() {
-  //   return this.http.post(
-  //     logoutUrl,
-  //     {},
-  //     {
-  //       headers: this.createAuthHeaders('Kinvey')
-  //     }
-  //   )
-  // }
+
+  getItems(){
+    return this.http.get(
+      itemsUrl,
+      {
+        headers: this.createAuthHeaders('Kinvey')
+      }
+    );
+  }
+
+  getHeroes(){
+    return this.http.get(
+      heroesUrl,
+      {
+        headers: this.createAuthHeaders('Kinvey')
+      }
+    );
+  }
 
   get authtoken() {
     return this.currentAuthtoken;

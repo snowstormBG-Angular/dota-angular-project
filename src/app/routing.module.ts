@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 //services
 import {ValidatePassword} from './components/public/register-form/validate-password';
+import {AuthenticationModule} from "./services/auth.module";
 
 //guards
 import {AuthGuard} from './guards/auth.guard.service';
@@ -20,19 +21,20 @@ import { ErrorPageComponent } from './components/public/error-page/error-page.co
 //private
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { HeroesComponent } from './components/private/heroes/heroes.component';
-import {AuthenticationModule} from "./services/auth.module";
 import { BoxComponent } from './components/private/dashboard/box/box.component';
+import { ItemsComponent } from './components/private/items/items.component';
+import { PortraitComponent } from './components/private/heroes/portrait/portrait.component';
+import { ItemComponent } from './components/private/items/item/item.component';
 
 
-//todo: add guards
-//default auth
-//guard login and register from logged users
 const routes: Routes = [
   {path: '', pathMatch:'full', canActivate: [ LandingGuard ], component: LandingPageComponent},
   {path: 'login', canActivate: [ LandingGuard ], component: LoginComponent},
   {path: 'register', canActivate: [ LandingGuard ], component: RegisterComponent},
   {path: 'news', component: NewsComponent},
   {path: 'dashboard',  canActivate: [ AuthGuard ], component: DashboardComponent},
+  {path: 'heroes', canActivate:[AuthGuard], component: HeroesComponent},
+  {path: 'items', canActivate:[AuthGuard], component: ItemsComponent},
 
   {path:'**', component: ErrorPageComponent}
 ];
@@ -46,6 +48,9 @@ const routes: Routes = [
     HeroesComponent,
     ErrorPageComponent,
     BoxComponent,
+    ItemsComponent,
+    PortraitComponent,
+    ItemComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

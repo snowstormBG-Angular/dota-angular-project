@@ -22,12 +22,15 @@ div{
 }
 #profile{
   grid-column-start: 1;
+  /* autoprefixer: off */
   grid-column-end: 2;
   grid-row-start: 1;
+  /* autoprefixer: off */
   grid-row-end: 2;
 }
 #friends{
   grid-column-start: 1;
+  /* autoprefixer: off */
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 4;
@@ -36,12 +39,14 @@ div{
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
+  /* autoprefixer: off */
   grid-row-end: 2;
 }
 #new-items{
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
+  /* autoprefixer: off */
   grid-row-end: 2;
 }
 #new-treasures{
@@ -49,34 +54,41 @@ div{
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  /* autoprefixer: off */
 }
 #watch-live{
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  /* autoprefixer: off */
 }
 #party-box{
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 3;
+  /* autoprefixer: off */
   grid-row-end: 4;
 }
 #last-match{
   grid-column-start: 4;
   grid-column-end: 5;
+  /* autoprefixer: off */
   grid-row-start: 1;
   grid-row-end: 2;
 }
 #offers{
   grid-column-start: 4;
   grid-column-end: 5;
+  /* autoprefixer: off */
   grid-row-start: 2;
   grid-row-end: 3;
+  /* autoprefixer: off */
 }
 #feed{
   grid-column-start: 4;
   grid-column-end: 5;
+  /* autoprefixer: off */
   grid-row-start: 3;
   grid-row-end: 4;
 }

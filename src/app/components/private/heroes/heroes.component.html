@@ -1,3 +1,26 @@
-<p>
-  heroes works!
-</p>
+<div class="heroesBoard">
+  <p class="labels" id="str">Strength</p>
+  <div id="strHeroes">
+    <hero-portrait class="heroPortrait"
+      *ngFor="let hero of strHeroes"
+      [name]="hero.localized_name"
+      [id]="hero.id"
+      [imageUrl]="hero.imageUrl"></hero-portrait>
+  </div>
+  <p class="labels" id="agi">Agility</p>
+  <div id="agiHeroes">
+    <hero-portrait class="heroPortrait"
+      *ngFor="let hero of agiHeroes"
+      [name]="hero.localized_name"
+      [id]="hero.id"
+      [imageUrl]="hero.imageUrl"></hero-portrait>
+  </div>
+  <p class="labels" id="int">Intelligence</p>
+  <div id="intHeroes">
+    <hero-portrait class="heroPortrait"
+      *ngFor="let hero of intHeroes"
+      [name]="hero.localized_name"
+      [id]="hero.id"
+      [imageUrl]="hero.imageUrl"></hero-portrait>
+  </div>
+</div>

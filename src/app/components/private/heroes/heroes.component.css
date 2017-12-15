@@ -1,0 +1,51 @@
+.heroPortrait{
+  overflow: hidden;
+  width: 35px;
+  height: 70px;
+  background-color: #3a4c4e;
+  margin: 4px;
+  color: #eeeeee;
+
+  display: inline-block;
+}
+
+.heroPortrait:hover{
+  transition: all .2s ease-in-out;
+  transform: scale(1.6);
+  cursor: pointer;
+}
+
+.heroesBoard{
+  padding-bottom: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+.heroesBoard{
+  /*CSS grid for the heroes board*/
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 200px 200px 200px;
+}
+
+.labels{
+  text-align: center;
+  color: #dddddd;
+
+  height: 120px;
+  width: 50px;
+
+  transform: rotate(270deg) ;
+  -webkit-transform: rotate(270deg) ;
+  -moz-transform: rotate(270deg) ;
+  -o-transform: rotate(270deg) ;
+  -ms-transform: rotate(270deg) ;
+}
+/*#str{*/
+  /*grid-column-start: 1;*/
+  /*!* autoprefixer: off *!*/
+  /*grid-column-end: 2;*/
+  /*grid-row-start: 1;*/
+  /*!* autoprefixer: off *!*/
+  /*grid-row-end: 2;*/
+/*}*/

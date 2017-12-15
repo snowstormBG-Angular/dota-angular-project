@@ -1,0 +1,9 @@
+<div class="itemsBoard">
+  <h2>List of items in Dota 2</h2>
+  <item *ngFor="let item of items"
+        class="itemBox"
+        [id]="item.id"
+        [name]="item.localized_name"
+        [cost]="item.cost"
+        [imageUrl]="item.imageUrl"></item>
+</div>

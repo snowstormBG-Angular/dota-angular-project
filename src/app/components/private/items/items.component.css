@@ -1,0 +1,23 @@
+.itemBox{
+  overflow: hidden;
+  width: 50px;
+  height: 60px;
+  background-color: #3a4c4e;
+  margin: 4px;
+  color: #eeeeee;
+  display: inline-block;
+}
+.itemBox:hover{
+  transition: all .2s ease-in-out;
+  transform: scale(1.6);
+  cursor: pointer;
+}
+.itemsBoard{
+  padding-bottom: 50px;
+  width: 80%;
+  margin: auto;
+}
+h2{
+  text-align: center;
+  color: #ACACAC;
+}
