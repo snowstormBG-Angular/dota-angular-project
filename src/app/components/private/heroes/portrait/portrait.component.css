@@ -1,0 +1,15 @@
+.bottomTitle{
+  margin: 0;
+  padding: 2px;
+  display: none;
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  /*margin: auto;*/
+  width: 100%;
+}
+.container1234:hover .bottomTitle{
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+}

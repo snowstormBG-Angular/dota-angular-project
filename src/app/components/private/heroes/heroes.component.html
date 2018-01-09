@@ -5,7 +5,7 @@
       *ngFor="let hero of strHeroes"
       [name]="hero.localized_name"
       [id]="hero.id"
-      [imageUrl]="hero.imageUrl"></hero-portrait>
+      [imageUrl]="hero.icon"></hero-portrait>
   </div>
   <p class="labels" id="agi">Agility</p>
   <div id="agiHeroes">
@@ -13,7 +13,7 @@
       *ngFor="let hero of agiHeroes"
       [name]="hero.localized_name"
       [id]="hero.id"
-      [imageUrl]="hero.imageUrl"></hero-portrait>
+      [imageUrl]="hero.icon"></hero-portrait>
   </div>
   <p class="labels" id="int">Intelligence</p>
   <div id="intHeroes">
@@ -21,6 +21,6 @@
       *ngFor="let hero of intHeroes"
       [name]="hero.localized_name"
       [id]="hero.id"
-      [imageUrl]="hero.imageUrl"></hero-portrait>
+      [imageUrl]="hero.icon"></hero-portrait>
   </div>
 </div>
