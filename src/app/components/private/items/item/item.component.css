@@ -1,0 +1,13 @@
+.bottomTitle{
+  margin: 0;
+  padding: 2px;
+  display: none;
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+h6{
+  margin-top: 0;
+}
