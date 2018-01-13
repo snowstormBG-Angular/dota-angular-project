@@ -25,6 +25,7 @@ import { BoxComponent } from './components/private/dashboard/box/box.component';
 import { ItemsComponent } from './components/private/items/items.component';
 import { PortraitComponent } from './components/private/heroes/portrait/portrait.component';
 import { ItemComponent } from './components/private/items/item/item.component';
+import { DetailsPageComponent } from './components/private/heroes/details-page/details-page.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'dashboard',  canActivate: [ AuthGuard ], component: DashboardComponent},
   {path: 'heroes', canActivate:[AuthGuard], component: HeroesComponent},
+  {path: 'heroes/:id', canActivate:[AuthGuard], component: DetailsPageComponent},
   {path: 'items', canActivate:[AuthGuard], component: ItemsComponent},
 
   {path:'**', component: ErrorPageComponent}
@@ -51,6 +53,7 @@ const routes: Routes = [
     ItemsComponent,
     PortraitComponent,
     ItemComponent,
+    DetailsPageComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
