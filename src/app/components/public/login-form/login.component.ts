@@ -44,6 +44,20 @@ export class LoginComponent implements OnInit {
       )
   }
 
+  skipSubmit() : void {
+    this.model.username = 'asd';
+    this.model.password = 'asd';
+    this.authService.login(this.model)
+      .subscribe(
+        data => {
+          this.successfulLogin(data);
+        },
+        err => {
+          this.loginFail = true;
+        }
+      )
+  }
+
   successfulLogin(data) : void {
     this.authService.authtoken = data['_kmd']['authtoken'];
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);

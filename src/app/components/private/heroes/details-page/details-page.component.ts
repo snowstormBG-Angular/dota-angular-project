@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-details-page',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-page.component.css']
 })
 export class DetailsPageComponent implements OnInit {
+  @Input() public id;
 
   constructor() { }
 

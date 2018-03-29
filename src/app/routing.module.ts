@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'dashboard',  canActivate: [ AuthGuard ], component: DashboardComponent},
   {path: 'heroes', canActivate:[AuthGuard], component: HeroesComponent},
-  {path: 'heroes/:id', canActivate:[AuthGuard], component: DetailsPageComponent},
+  {path: 'heroes/:name', canActivate:[AuthGuard], component: DetailsPageComponent},
   {path: 'items', canActivate:[AuthGuard], component: ItemsComponent},
 
   {path:'**', component: ErrorPageComponent}
